@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Default|Win32">
+      <Configuration>Default</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{0C7CC2E6-6198-DD76-74FF-E59DE8AB1FAE}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>zlib</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props"/>
+  <PropertyGroup Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+  </PropertyGroup>
+  <PropertyGroup Label="Locals">
+    <PlatformToolset>v110</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props"/>
+  <ImportGroup Label="ExtensionSettings"/>
+  <ImportGroup Label="PropertySheets">
+    <Import Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props"/>
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros"/>
+  <PropertyGroup>
+    <ExecutablePath>$(ExecutablePath);$(MSBuildProjectDirectory)\.\bin\;$(MSBuildProjectDirectory)\.\bin\</ExecutablePath>
+    <IntDir>$(Configuration)\obj\$(ProjectName)\</IntDir>
+    <OutDir>$(SolutionDir)$(Configuration)\</OutDir>
+    <TargetName>$(ProjectName)</TargetName>
+    <TargetPath>$(OutDir)lib\$(ProjectName)$(TargetExt)</TargetPath>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Default|Win32'">
+    <Lib>
+      <OutputFile>$(OutDir)lib\$(ProjectName)$(TargetExt)</OutputFile>
+    </Lib>
+    <Link>
+      <AdditionalDependencies></AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <None Include="zlib.gyp"/>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="inffast.h"/>
+    <ClInclude Include="trees.h"/>
+    <ClInclude Include="inftrees.h"/>
+    <ClInclude Include="zlib.h"/>
+    <ClInclude Include="zconf.h"/>
+    <ClInclude Include="zutil.h"/>
+    <ClInclude Include="crc32.h"/>
+    <ClInclude Include="gzguts.h"/>
+    <ClInclude Include="inffixed.h"/>
+    <ClInclude Include="inflate.h"/>
+    <ClInclude Include="deflate.h"/>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="crc32.c"/>
+    <ClCompile Include="gzlib.c"/>
+    <ClCompile Include="inffast.c"/>
+    <ClCompile Include="uncompr.c"/>
+    <ClCompile Include="inftrees.c"/>
+    <ClCompile Include="gzread.c"/>
+    <ClCompile Include="infback.c"/>
+    <ClCompile Include="gzclose.c"/>
+    <ClCompile Include="zutil.c"/>
+    <ClCompile Include="compress.c"/>
+    <ClCompile Include="adler32.c"/>
+    <ClCompile Include="inflate.c"/>
+    <ClCompile Include="gzwrite.c"/>
+    <ClCompile Include="deflate.c"/>
+    <ClCompile Include="trees.c"/>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets"/>
+  <ImportGroup Label="ExtensionTargets"/>
+</Project>
